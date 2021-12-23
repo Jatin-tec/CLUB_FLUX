@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block body %}
+    <section>
+        <header class="section-header">
+
+        </header>
+
+        <div class="container my-4 col-lg-6">
+            <form action="{% url 'registration' %}" method="post">
+                {% csrf_token %}
+                <div class="row gy-4">
+
+                    <div class="col-md-12">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="col-md-6 ">
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <select class="form-control" id="year" name="year" required>
+                              <option>1yr</option>
+                              <option>2yr</option>
+                              <option>3yr</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="branch">Branch</label>
+                            <select class="form-control" id="branch" name="branch" required>
+                                <option>Artificial Intelligence and Data Science</option>
+                                <option>Computer Science And Engineering</option>
+                                <option>CSE(IOT And Cyber Security Wirh Block Chain Technology)</option>
+                                <option>Construction Automation</option>
+                                <option>Agricultural Engineering</option>
+                                <option>Mechanical And Automation Engineering</option>
+                                <option>Civil Engineering</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Electrical Engineering</option>
+                                <option>Electronics & Instrumentation Engineering</option>
+                                <option>Electronics & Communication Engineering</option>
+                                <option>Computer Science and Engineering</option>
+                                <option>Bio-Medical Engineering</option>
+                                <option>Petro Chemical Engineering</option>
+                                <option>Internet of Things (IoT)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <input type="email" class="form-control" name="email" rows="6" placeholder="email" required></input>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="scholar_number" rows="6" placeholder="scholar number" required></input>
+                    </div>
+                   
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="enrollment_number" rows="6" placeholder="enrollment number" required></input>
+                    </div>
+
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="phone_number" rows="6" placeholder="phone number" required></input>
+                    </div>
+
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary" type="submit"><strong> Register </strong></button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section>
+{% endblock body %}
