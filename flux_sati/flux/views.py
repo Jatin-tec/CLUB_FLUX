@@ -9,6 +9,9 @@ def index(request):
     
     # projects = 
 
-    print(compleate_projects)
-
     return render(request, 'index.html', {'compleate_projects' : compleate_projects, 'ongoing_projects' : ongoing_projects})
+
+def project_desc(request, id=""):
+    project = Projects.objects.get(id=id)
+
+    return render(request, 'project-details.html', {'project' : project})    

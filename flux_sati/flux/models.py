@@ -5,10 +5,14 @@ from django.db import models
 class Projects(models.Model):
     name = models.CharField(max_length=200, blank=False, null=False, verbose_name="Project Name")
     description = models.CharField(max_length=1000, blank=True, null=True, verbose_name="project description")
-    image = models.ImageField(upload_to='media', blank=True, null=True, default='')
+    start_year = models.CharField(max_length=10, null=True, blank=True, verbose_name="project start year")
+    category = models.CharField(max_length=50, null=True, blank=True, verbose_name="project category")
+    image1 = models.ImageField(upload_to='media', blank=True, null=True, default='')
+    image2 = models.ImageField(upload_to='media', blank=True, null=True, default='')
+    image3 = models.ImageField(upload_to='media', blank=True, null=True, default='')
     completed = models.BooleanField(null=False, blank=False, default=False, verbose_name="Is this project compleated")
     team = models.TextField(null=True, blank=True, default='[]', verbose_name='Team members')
-
+   
     def __str__(self):
         return self.name
 
