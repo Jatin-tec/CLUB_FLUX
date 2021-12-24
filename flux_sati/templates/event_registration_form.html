@@ -1,0 +1,117 @@
+{% extends 'base.html' %}
+
+{% block message %}
+ {% if message %}
+    <section class="my-4 d-flex justify-content-center" >
+        <div class="alert alert-primary position-fixed" id="message" role="alert">
+            {{ message }} 
+        </div>
+    </section>
+ {% else %} 
+    <section></section>
+ {% endif %} 
+{% endblock message %}
+
+{% block body %}
+        <header class="section-header">
+            <p>Fill in the details below!</p>
+        </header>
+
+        <div class="container col-lg-6">
+            <form action="{% url 'registration' %}" method="post" id="registration-form">
+                {% csrf_token %}
+                <div class="row gy-4">
+
+                    <div class="col-md-12">
+                        <input type="text" name="name" class="form-control" placeholder="Your Name" required>
+                    </div>
+
+                    <div class="col-md-6 ">
+                        <div class="form-group">
+                            <label for="year">Year</label>
+                            <select class="form-control" id="year" name="year" required>
+                              <option>1yr</option>
+                              <option>2yr</option>
+                              <option>3yr</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="form-group">
+                            <label for="branch">Branch</label>
+                            <select class="form-control" id="branch" name="branch" required>
+                                <option>Artificial Intelligence and Data Science</option>
+                                <option>Computer Science And Engineering</option>
+                                <option>CSE(IOT And Cyber Security Wirh Block Chain Technology)</option>
+                                <option>Construction Automation</option>
+                                <option>Agricultural Engineering</option>
+                                <option>Mechanical And Automation Engineering</option>
+                                <option>Civil Engineering</option>
+                                <option>Mechanical Engineering</option>
+                                <option>Electrical Engineering</option>
+                                <option>Electronics & Instrumentation Engineering</option>
+                                <option>Electronics & Communication Engineering</option>
+                                <option>Computer Science and Engineering</option>
+                                <option>Bio-Medical Engineering</option>
+                                <option>Petro Chemical Engineering</option>
+                                <option>Internet of Things (IoT)</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="col-md-12">
+                        <input type="email" class="form-control" name="email" rows="6" placeholder="email" required></input>
+                    </div>
+                    
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="scholar_number" rows="6" placeholder="scholar number" required></input>
+                    </div>
+                   
+                    <div class="col-md-6">
+                        <input type="text" class="form-control" name="enrollment_number" rows="6" placeholder="enrollment number" required></input>
+                    </div>
+
+                    <div class="col-md-12">
+                        <input type="text" class="form-control" name="phone_number" rows="6" placeholder="phone number" required></input>
+                    </div>
+
+                    <div class="col-md-12 text-center">
+                        <button class="btn btn-primary" type="submit"><strong> Register </strong></button>
+                    </div>
+
+                </div>
+            </form>
+
+        </div>
+
+        <!-- Button trigger modal -->
+  <button type="button" id="modal-button" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle"><strong>{{ event.name }}</strong></h5>
+          <button type="button" class="close btn btn-primary" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img class="img-fluid" src={{ event.poster.url }} alt="" >
+        </div>
+      </div>
+    </div>
+  </div>
+    
+{% endblock body %}
+
+{% block script %}
+        <script>
+            setTimeout(function(){ document.getElementById("message").style.display = "none"; }, 2000);
+            document.getElementById('modal-button').click();
+        </script>
+{% endblock script %}

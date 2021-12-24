@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block body %}
+<main id="main">
+
+  <!-- ======= Breadcrumbs ======= -->
+  <section class="breadcrumbs invisible">
+    <div class="container">
+
+      <!-- <h2>Portfolio Details</h2> -->
+
+    </div>
+  </section><!-- End Breadcrumbs -->
+
+  <!-- ======= Portfolio Details Section ======= -->
+  <section id="portfolio-details" class="portfolio-details">
+    <div class="container">
+
+      <div class="row gy-4">
+
+        <div class="col-lg-8">
+          <div class="portfolio-details-slider swiper">
+            <div class="swiper-wrapper align-items-center">
+
+              <div class="swiper-slide">
+                <img class="img-fluid" src={{ project.image1.url }} alt="">
+              </div>
+
+              {% if project.image2 %}
+              <div class="swiper-slide">
+                <img class="img-fluid" src={{ project.image2.url }} alt="">
+              </div>
+              {% endif %}
+
+              {% if project.image3 %}
+              <div class="swiper-slide">
+                <img class="img-fluid" src={{ project.image3.url }} alt="">
+              </div>
+              {% endif %}
+
+            </div>
+            <div class="swiper-pagination"></div>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <div class="portfolio-info">
+            <h3>Project information</h3>
+            <ul>
+              <li><strong>Category</strong>: {{ project.category }}</li>
+              <li><strong>Project date</strong>: {{ project.start_year }}</li>
+              <li><strong>Team members</strong>: </li>
+            </ul>
+          </div>
+          <div class="portfolio-description">
+            <h2>{{ project.name }}</h2>
+            <p>
+              {{ project.description }}
+            </p>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+  </section><!-- End Portfolio Details Section -->
+
+</main><!-- End #main -->
+
+{% endblock body %}
