@@ -557,5 +557,35 @@
 
   </section><!-- End Contact Section -->
 
+
+  <!-- Button trigger modal -->
+  <button type="button" id="modal-button" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModalCenter">
+    Launch demo modal
+  </button>
+  
+  <!-- Modal -->
+  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalCenterTitle"><strong>{{ event.name }}</strong></h5>
+          <button type="button" class="close btn btn-primary" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">Close</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <img class="img-fluid" src={{ event.poster.url }} alt="" >
+        </div>
+      </div>
+    </div>
+  </div>
+
 </main><!-- End #main -->
 {% endblock body %}
+
+
+{% block script %}
+        <script>
+            document.getElementById('modal-button').click();
+        </script>
+{% endblock script %}

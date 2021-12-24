@@ -18,7 +18,7 @@
         </header>
 
         <div class="container col-lg-6">
-            <form action="{% url 'registration' %}" method="post" id="registration-form" onSubmit="function(event){event.preventDefault()">
+            <form action="{% url 'registration' %}" method="post" id="registration-form">
                 {% csrf_token %}
                 <div class="row gy-4">
 
@@ -85,13 +85,13 @@
 
         </div>
 
-        <!-- Button trigger modal -->
-  <button type="button" id="modal-button" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModalCenter">
+  <!-- Button trigger modal -->
+  <!-- <button type="button" id="modal-button" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModalCenter">
     Launch demo modal
-  </button>
+  </button> -->
   
   <!-- Modal -->
-  <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <!-- <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
     <div class="modal-dialog modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-header">
@@ -105,13 +105,14 @@
         </div>
       </div>
     </div>
-  </div>
+  </div> -->
     
 {% endblock body %}
 
 {% block script %}
         <script>
             setTimeout(function(){ document.getElementById("message").style.display = "none"; }, 2000);
-            document.getElementById('modal-button').click();
+            // document.getElementById('modal-button').click();
+            // document.getElementById("registration-form").addEventListener("submit", function(event){event.preventDefault()})
         </script>
 {% endblock script %}
