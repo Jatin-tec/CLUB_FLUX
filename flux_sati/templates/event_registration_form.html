@@ -18,7 +18,7 @@
         </header>
 
         <div class="container col-lg-6">
-            <form action="{% url 'registration' %}" method="post">
+            <form action="{% url 'registration' %}" method="post" id="registration-form">
                 {% csrf_token %}
                 <div class="row gy-4">
 
@@ -86,7 +86,7 @@
         </div>
 
         <!-- Button trigger modal -->
-<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+  <button type="button" id="modal-button" class="btn btn-primary invisible" data-toggle="modal" data-target="#exampleModalCenter">
     Launch demo modal
   </button>
   
@@ -111,6 +111,7 @@
 
 {% block script %}
         <script>
-            setTimeout(function(){ document.getElementById('message').style.display = "none"; }, 2000);
+            setTimeout(function(){ document.getElementById("message").style.display = "none"; }, 2000);
+            document.getElementById('modal-button').click();
         </script>
 {% endblock script %}

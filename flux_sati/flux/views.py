@@ -55,4 +55,4 @@ def registration_form(request):
 def subscription(request):
     if request.method == 'POST':
         email = request.POST.get('email')    
-        return HttpResponse()
+        return HttpResponse('Subscription successful you can go back')
