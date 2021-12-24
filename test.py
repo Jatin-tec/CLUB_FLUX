@@ -1,0 +1,1 @@
+from flux_sati import application

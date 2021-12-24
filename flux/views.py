@@ -4,11 +4,12 @@ from .models import *
 
 # Create your views here.
 def index(request):
+    event = Events.objects.filter()[0]
     compleate_projects = Projects.objects.filter(completed=True)
     ongoing_projects = Projects.objects.filter(completed=False)
     projects = Projects.objects.all() 
 
-    return render(request, 'index.html', {'projects' : projects, 'compleate_projects' : compleate_projects, 'ongoing_projects' : ongoing_projects})
+    return render(request, 'index.html', {'projects' : projects, 'compleate_projects' : compleate_projects, 'ongoing_projects' : ongoing_projects, 'event':event})
 
 def project_desc(request, id=""):
     project = Projects.objects.get(id=id)
@@ -29,7 +30,7 @@ def registration_form(request):
             enrollment_number = request.POST.get('enrollment_number')
             phone_number = request.POST.get('phone_number')
     
-            student = Registraion()
+            student = Registration()
             student.event = event
             student.name = name
             student.year = year
