@@ -1,5 +1,5 @@
 from django.db import models
-
+import datetime
 # Create your models here.
 
 class Projects(models.Model):
@@ -32,7 +32,7 @@ class Events(models.Model):
     class Meta:
         verbose_name_plural = "Events" 
 
-class Registraion(models.Model):
+class Registration(models.Model):
     event = models.ForeignKey(Events, on_delete=models.CASCADE, null=False, blank=False)
     name = models.CharField(max_length=100, blank=False, null=False, verbose_name="Student Name")
     email = models.EmailField(blank=True, null=True, verbose_name="Student email")
@@ -64,4 +64,20 @@ class Team(models.Model):
 class Gallery(models.Model):
     heading = models.CharField(max_length=50, blank=False, null=False, verbose_name="Image heading")   
     description = models.CharField(max_length=100, blank=False, null=False, verbose_name="Image description")
-    image = models.ImageField(upload_to='media', blank=False, null=False, default='')      
+    image = models.ImageField(upload_to='media', blank=False, null=False, default='') 
+
+    def __str__(self):
+            return self.heading
+
+    class Meta:
+        verbose_name_plural = "Gallery"     
+
+class Subscriptions(models.Model):    
+    email = models.EmailField(blank=False, null=False, verbose_name="Email")
+    date = models.DateTimeField(default=datetime.datetime.now, verbose_name="Date Added")
+
+    def __str__(self):
+            return self.email
+
+    class Meta:
+        verbose_name_plural = "Subscriptions"  
