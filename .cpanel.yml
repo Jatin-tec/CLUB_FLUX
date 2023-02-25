@@ -2,3 +2,4 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/eazyt190/flux.satiengg.in/flux
+    - /usr/local/cpanel/3rdparty/bin/git pull origin main
