@@ -1,0 +1,1 @@
+web: gunicorn flux_sati.wsgi --log-file -
