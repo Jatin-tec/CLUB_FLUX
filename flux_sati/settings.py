@@ -26,9 +26,9 @@ SECRET_KEY = 'django-insecure-@nbn6q^554!gb2_68@52!t2chspf^6sg+ad39%x&4colipxt@y
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+ALLOWED_HOSTS = ["http://65.0.24.165/", "65.0.24.165"]
 
-CORS_ORIGIN_WHITELIST = ["https://web-production-a7f7.up.railway.app"]
+CORS_ORIGIN_WHITELIST = ["http://65.0.24.165/"]
 
 # Application definition
 
