@@ -1,11 +1,11 @@
 # cache
-__pycache__
+# __pycache__
 
 # migrations
-migrations
+# migrations
 
 # media files
 media
 
 # database
-db.sqlite3
+# db.sqlite3
