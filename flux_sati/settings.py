@@ -32,6 +32,7 @@ CORS_ORIGIN_WHITELIST = ["https://web-production-a7f7.up.railway.app"]
 
 # Application definition
 
+
 INSTALLED_APPS = [
     'flux.apps.FluxConfig',
     'import_export',
