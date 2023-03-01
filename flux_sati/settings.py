@@ -32,7 +32,6 @@ CORS_ORIGIN_WHITELIST = ["http://65.0.24.165/", "65.0.24.165"]
 
 # Application definition
 
-
 INSTALLED_APPS = [
     'flux.apps.FluxConfig',
     'import_export',
@@ -78,24 +77,24 @@ WSGI_APPLICATION = 'flux_sati.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
-
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
-        'NAME':  'djangodb',
-        'USER': 'djangouser',
-        'PASSWORD': 'fluxsati123',
-        'HOST': 'localhost',
-        'PORT': '5432',
-        'CONN_MAX_AGE': 300, 
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
     }
 }
+
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'NAME':  'djangodb',
+#         'USER': 'djangouser',
+#         'PASSWORD': 'fluxsati123',
+#         'HOST': 'localhost',
+#         'PORT': '5432',
+#         'CONN_MAX_AGE': 300, 
+#     }
+# }
 
 
 # Password validation
@@ -142,7 +141,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 STATIC_URL = '/static/'
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
-# STATICFILES_DIRS = [os.path.join(BASE_DIR, "static-files"),]
+STATICFILES_DIRS = [os.path.join(BASE_DIR, "static/static"), ]
 
 #Managing Media
 MEDIA_URL = '/media/'
