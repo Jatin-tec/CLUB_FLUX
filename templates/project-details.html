@@ -27,13 +27,13 @@
                 <img class="img-fluid" src={{ project.image1.url }} alt="">
               </div>
 
-              {% if project.image2 %}
+              {% if project.image2 == True %}
               <div class="swiper-slide">
                 <img class="img-fluid" src={{ project.image2.url }} alt="">
               </div>
               {% endif %}
 
-              {% if project.image3 %}
+              {% if project.image3 == True %}
               <div class="swiper-slide">
                 <img class="img-fluid" src={{ project.image3.url }} alt="">
               </div>
